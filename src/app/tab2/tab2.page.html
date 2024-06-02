@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Обчислення радіуса та площі (MVP)
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Сторона A</ion-label>
+    <ion-input type="number" [(ngModel)]="sideA"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Сторона B</ion-label>
+    <ion-input type="number" [(ngModel)]="sideB"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Сторона C</ion-label>
+    <ion-input type="number" [(ngModel)]="sideC"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Сторона D</ion-label>
+    <ion-input type="number" [(ngModel)]="sideD"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="calculate()">Обчислити</ion-button>
+
+  <ion-item *ngIf="radius && area">
+    <ion-label>Радіус описаного кола: {{ radius }}</ion-label>
+  </ion-item>
+  <ion-item *ngIf="area">
+    <ion-label>Площа описаного кола: {{ area }}</ion-label>
+  </ion-item>
+</ion-content>
